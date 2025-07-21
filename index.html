@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多合一网页缩略图</title>
+</head>
+
+<body>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    #device-preview {
+      background: url(/images/background.jpg) center center no-repeat;
+      background-size: cover;
+      height: 100%;
+    }
+
+    .wrapper {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    .display {
+      position: relative;
+      left: 0px;
+      height: 500px;
+    }
+
+    .wrapper div {
+      background-repeat: no-repeat;
+      background-size: 100%;
+      overflow: hidden;
+    }
+
+    .mobile {
+      background-image: url(/images/ph.png);
+      position: absolute;
+      width: 95px;
+      height: 196px;
+      top: 375px;
+      left: 300px;
+      z-index: 5;
+    }
+
+    .wrapper iframe {
+      transform: scale(0.219);
+      -webkit-transform: scale(0.219);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-color: #fff;
+      border: color #000;
+      border-radius: 6px;
+    }
+
+    .mobile iframe {
+      width: 384px;
+      height: 832px;
+      top: 5px;
+      left: 5px;
+      overflow-y: hidden;
+      border-radius: 46px;
+    }
+
+    .desktop iframe {
+      left: 10px;
+      top: 23px;
+      width: 1504px;
+      height: 960px;
+      -webkit-transform: scale(0.36);
+      transform: scale(0.36);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+    }
+
+    .tablet {
+      background-image: url(/images/pad.png);
+      width: 246px;
+      height: 400px;
+      z-index: 3;
+      position: absolute;
+      left: 120px;
+      top: 230px;
+    }
+
+    .tablet iframe {
+      width: 1008px;
+      height: 1338px;
+      top: 12px;
+      left: 12px;
+      overflow-y: hidden;
+      border-radius: 28px;
+    }
+
+    .laptop {
+      background-image: url(/images/bi.png);
+      width: 477px;
+      height: 307px;
+      top: 264px;
+      left: 560px;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .laptop iframe {
+      width: 1311px;
+      height: 825px;
+      top: 12px;
+      left: 56px;
+      -webkit-transform: scale(0.277);
+      transform: scale(0.277);
+      transform-origin: top left;
+      -webkit-transform-origin: top left;
+    }
+
+    .desktop {
+      position: absolute;
+      width: 566px;
+      height: 538px;
+      background-image: url(/images/pc.png);
+      top: 0px;
+      left: 220px;
+      z-index: 1;
+    }
+  </style>
+
+  <div id="device-preview" style="display: block;">
+    <div class="wrapper">
+      <section class="display">
+        <div class="mobile">
+          <iframe id="mobile" src="https://mabbs.github.io"></iframe>
+        </div>
+        <div class="tablet">
+          <iframe id="tablet" src="https://mabbs.github.io"></iframe>
+        </div>
+        <div class="laptop">
+          <iframe id="laptop" src="https://mabbs.github.io"></iframe>
+        </div>
+        <div class="desktop">
+          <iframe id="desktop" src="https://mabbs.github.io"></iframe>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
